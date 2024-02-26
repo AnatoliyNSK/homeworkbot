@@ -16,3 +16,4 @@ Base = declarative_base()
 
 def create_db() -> None:
     Base.metadata.create_all(engine)
+
