@@ -26,7 +26,7 @@ class FirstRunConfigurator:
             Path(path.joinpath(it.path_to_test)).mkdir(parents=True, exist_ok=True)
             Path(path.joinpath(it.path_to_answer)).mkdir(parents=True, exist_ok=True)
 
-    def couning_tasks(self, discipline: DisciplineWorksConfig) -> int:
+    def counting_tasks(self, discipline: DisciplineWorksConfig) -> int:
         """
         :return: общее количество задач в дисциплине
         """

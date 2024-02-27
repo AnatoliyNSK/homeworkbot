@@ -13,7 +13,7 @@ class ExcelDataParserError(Exception):
 
 
 class ParserType(Enum):
-    ALL = 1
+    ALL = 0
     TEACHER = 1
     STUDENT = 2
 
@@ -103,11 +103,11 @@ class ExcelDataParser:
             if student_name is None:
                 break
 
-            if group not in self.__student[discipline]:
-                self.__student[discipline][group] = []
-
             if discipline not in self.__student:
                 self.__student[discipline] = {}
+
+            if group not in self.__student[discipline]:
+                self.__student[discipline][group] = []
 
             self.__student[discipline][group].append(
                 StudentRaw(

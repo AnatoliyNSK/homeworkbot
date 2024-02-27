@@ -43,7 +43,7 @@ def fill_db_from_files(disciplines_path: str, excel_path: str) -> None:
             path_to_answer=it.path_to_answer,
             path_to_test=it.path_to_test,
             language=it.language,
-            max_tasks=configurator.couning_tasks(it),
+            max_tasks=configurator.counting_tasks(it),
             works=configurator.disciplines_works_to_json(it),
             max_home_works=len(it.works)
         )
@@ -66,7 +66,7 @@ def fill_db_from_files(disciplines_path: str, excel_path: str) -> None:
                 session.add(student)
 
     for dis, teacher_group in configurator.teachers_config.items():
-        for group_name, teacher_raw_list in teacher_group:
+        for group_name, teacher_raw_list in teacher_group.items():
             if group_name not in groups:
                 groups[group_name] = Group(group_name=group_name)
                 session.add(groups[group_name])
